@@ -16,8 +16,10 @@
         </div>
 
         <p class="mt-5">=== BEGIN MESSAGE ===</p>
+
         <nuxt-content :document="message" />
-        <p>==== END MESSAGE ====</p>
+
+        <p class="mb-5">==== END MESSAGE ====</p>
       </div>
       <div v-else>
         <p>NO MESSAGES; COMMUNICATIONS CLEAR</p>
@@ -28,7 +30,6 @@
 
 <script lang="ts">
 import {
-  computed,
   defineComponent,
   onMounted,
   ref,
