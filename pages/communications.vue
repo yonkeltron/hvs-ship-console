@@ -17,7 +17,9 @@
 
         <p class="mt-5">=== BEGIN MESSAGE ===</p>
 
-        <nuxt-content :document="message" />
+        <div class="w-2/3">
+          <nuxt-content :document="message" />
+        </div>
 
         <p class="mb-5">==== END MESSAGE ====</p>
       </div>
