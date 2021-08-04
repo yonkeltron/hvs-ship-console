@@ -4,9 +4,8 @@ export interface PlayerCharacter {
   highConcept: string;
   trouble: string;
   relationship: string;
-  otherAspectOne: string;
-  otherAspectTwo: string;
-  physicalStress: number;
-  mentalStress: number;
+  otherAspects: string[];
+  physicalStress: { current: number; max: number };
+  mentalStress: { current: number; max: number };
   stunts: string[];
 }

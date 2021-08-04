@@ -23,7 +23,7 @@
 
         <p class="mb-5">==== END MESSAGE ====</p>
       </div>
-      <div v-else>
+      <div v-else class="text-xl">
         <p>NO MESSAGES; COMMUNICATIONS CLEAR</p>
       </div>
     </section>
