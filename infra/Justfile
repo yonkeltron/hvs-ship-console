@@ -1,3 +1,5 @@
+set dotenv-load := true
+
 pyinfra_invocation := "poetry run pyinfra infra/inventory.py --ssh-key ~/.ssh/id_ed25519"
 
 default:

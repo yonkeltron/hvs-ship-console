@@ -2,12 +2,12 @@ from pyinfra import host
 from pyinfra.facts import files
 from pyinfra.operations import git, server
 
-if host.get_fact(files.Directory, '/home/yonkeltron/.volta'):
+if not host.get_fact(files.Directory, '/home/yonkeltron/.volta'):
     server.shell(
         name='Install and set up Volta',
         commands=[
             'curl https://get.volta.sh | bash',
-            'volta setup'
+            '/home/yonkeltron/.volta/bin/volta setup'
         ]
     )
 

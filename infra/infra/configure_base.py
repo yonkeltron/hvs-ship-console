@@ -1,4 +1,4 @@
-from pyinfra.operations import apt, server
+from pyinfra.operations import apt, files, server
 
 apt.key(
     name='Add Tailscale GPG key',
@@ -29,4 +29,13 @@ server.user(
     ensure_home=True,
     public_keys=public_ssh_key,
     shell="/usr/bin/bash"
+)
+
+files.directory(
+    name='Create AITH data dir',
+    path='/opt/aith',
+    present=True,
+    user='yonkeltron',
+    group='yonkeltron',
+    recursive=True,
 )
