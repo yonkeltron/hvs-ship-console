@@ -19,7 +19,7 @@ apt.packages(
     latest=True,
 )
 
-with open('~/.ssh/id_rsa.pub', 'r') as key_file:
+with open('/home/yonkeltron/.ssh/id_ed25519.pub', 'r') as key_file:
     public_ssh_key = key_file.read()
 
 server.user(
@@ -27,5 +27,6 @@ server.user(
     user='yonkeltron',
     present=True,
     ensure_home=True,
-    public_keys=public_ssh_key
+    public_keys=public_ssh_key,
+    shell="/usr/bin/bash"
 )
