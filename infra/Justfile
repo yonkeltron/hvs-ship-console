@@ -1,0 +1,10 @@
+pyinfra_invocation := "poetry run pyinfra infra/inventory.py --ssh-key ~/.ssh/id_ed25519"
+
+default:
+  @just --list
+
+configure-base:
+    {{pyinfra_invocation}} infra/configure_base.py --ssh-user root 
+
+configure-user:
+    {{pyinfra_invocation}} infra/configure_user.py

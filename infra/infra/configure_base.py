@@ -15,7 +15,7 @@ apt.upgrade(name='Upgrade all system packages')
 
 apt.packages(
     name='Ensure that needed packages are installed',
-    packages=['emacs-nox', 'htop', 'mosh', 'sudo', 'tailscale', 'tmux'],
+    packages=['emacs-nox', 'git', 'htop', 'mosh', 'sudo', 'tailscale', 'tmux'],
     latest=True,
 )
 

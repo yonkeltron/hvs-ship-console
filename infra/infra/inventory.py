@@ -1,1 +1,3 @@
-aith_hosts = ['159.65.43.142']
+import os
+
+aith_hosts = [os.environ["AITH_WEB_HOST"]]
