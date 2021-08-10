@@ -1,1 +1,7 @@
 
+aith.yonkeltron.com {
+    reverse_proxy 100.110.170.106:3000
+    log {
+        output file /var/log/caddy/aith.yonkeltron.com.caddy_access.log
+    }
+}
