@@ -39,3 +39,10 @@ files.directory(
     group='yonkeltron',
     recursive=True,
 )
+
+files.put(
+    name='Upload Caddy binary',
+    src='caddy_linux_amd64',
+    dest='/usr/local/bin/caddy',
+    mode='u=rwx,g=rx,o=rx'
+)

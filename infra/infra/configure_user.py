@@ -1,6 +1,6 @@
 from pyinfra import host
 from pyinfra.facts import files
-from pyinfra.operations import git, server
+from pyinfra.operations import files, git, server
 
 if not host.get_fact(files.Directory, '/home/yonkeltron/.volta'):
     server.shell(
@@ -28,4 +28,10 @@ git.repo(
     src='https://github.com/yonkeltron/hvs-ship-console.git',
     dest='/opt/aith/hvs-ship-console',
     branch='main'
+)
+
+files.put(
+    name='Upload Caddyfile',
+    src='Caddyfile',
+    dest='Caddyfile'
 )

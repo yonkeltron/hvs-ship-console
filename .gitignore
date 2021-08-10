@@ -89,3 +89,4 @@ sw.*
 # Vim swap files
 *.swp
 .env
+caddy_linux_amd64
