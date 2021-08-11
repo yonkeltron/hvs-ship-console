@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from '@nuxtjs/composition-api';
+import { computed, defineComponent } from '@nuxtjs/composition-api';
 
 export default defineComponent({
   props: {
@@ -17,8 +17,9 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const face = computed(() => props.face);
     return {
-      dieFace: props.face,
+      dieFace: face,
     };
   },
 });
