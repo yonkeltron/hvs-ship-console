@@ -12,7 +12,7 @@
       <DieDisplay :face="d4" />
     </div>
 
-    <div class="mt-5 border-4 border-white rounded">
+    <div class="mt-5 border-4 border-white rounded bg-black">
       <div class="flex h-48 justify-center items-center">
         <button
           class="
@@ -67,3 +67,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="postcss" scoped>
+section {
+  background-image: url('/images/new_wave.svg');
+}
+</style>

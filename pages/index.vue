@@ -19,7 +19,7 @@
   </section>
 </template>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 section {
   background-image: url('/images/new_wave.svg');
 }
