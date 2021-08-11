@@ -1,6 +1,11 @@
 <template>
   <section class="p-5 font-mono text-white bg-black h-screen">
-    <div class="flex gap-5">
+    <div class="float-right">
+      <NavigationLinks />
+    </div>
+    <h2 class="text-2xl">&rarr; Dice</h2>
+
+    <div class="flex gap-5 mt-5">
       <DieDisplay :face="d1" />
       <DieDisplay :face="d2" />
       <DieDisplay :face="d3" />
@@ -46,10 +51,10 @@ export default defineComponent({
       return output;
     };
 
-    const d1 = ref(' ');
-    const d2 = ref(' ');
-    const d3 = ref(' ');
-    const d4 = ref(' ');
+    const d1 = ref('?');
+    const d2 = ref('?');
+    const d3 = ref('?');
+    const d4 = ref('?');
 
     const reroll = () => {
       d1.value = roll();

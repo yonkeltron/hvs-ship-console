@@ -1,5 +1,8 @@
 <template>
   <div class="p-5 font-mono text-white bg-black h-full">
+    <div class="float-right">
+      <NavigationLinks />
+    </div>
     <h2 class="text-2xl">&rarr; Communications</h2>
 
     <section class="mt-5">
