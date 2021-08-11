@@ -2,15 +2,23 @@
   <section class="p-5 font-mono text-white bg-black h-screen">
     <div class="flex gap-5">
       <DieDisplay :face="d1" />
-      <DieDisplay :face="roll()" />
-      <DieDisplay :face="roll()" />
-      <DieDisplay :face="roll()" />
+      <DieDisplay :face="d2" />
+      <DieDisplay :face="d3" />
+      <DieDisplay :face="d4" />
     </div>
 
     <div class="mt-5 border-4 border-white rounded">
       <div class="flex h-48 justify-center items-center">
         <button
-          class="text-9xl text-white font-bold focus:text-black focus:bg-white"
+          class="
+            text-9xl text-white
+            rounded
+            font-bold
+            px-8
+            transition
+            duration-500
+            hover:bg-white hover:text-black
+          "
           @click="reroll()"
         >
           ROLL
@@ -28,7 +36,7 @@ export default defineComponent({
     const roll = () => {
       const rand = Math.floor(Math.random() * 3);
 
-      let output = '';
+      let output = ' ';
       if (rand === 0) {
         output = '-';
       } else if (rand === 1) {
@@ -38,10 +46,10 @@ export default defineComponent({
       return output;
     };
 
-    const d1 = ref(roll());
-    const d2 = ref(roll());
-    const d3 = ref(roll());
-    const d4 = ref(roll());
+    const d1 = ref(' ');
+    const d2 = ref(' ');
+    const d3 = ref(' ');
+    const d4 = ref(' ');
 
     const reroll = () => {
       d1.value = roll();
