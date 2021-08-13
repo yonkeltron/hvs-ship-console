@@ -8,13 +8,13 @@
     <section class="mt-5">
       <div v-if="message" class="my-3">
         <div class="grid grid-cols-2 gap-5 w-1/3">
-          <p>To:</p>
+          <p class="text-green-400">To:</p>
           <p>{{ message.to }}</p>
 
-          <p>From:</p>
+          <p class="text-green-400">From:</p>
           <p>{{ message.from }}</p>
 
-          <p>Source:</p>
+          <p class="text-green-400">Source:</p>
           <p>{{ message.source }}</p>
         </div>
 
