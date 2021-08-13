@@ -2,8 +2,26 @@
   <div>
     <section class="mt-5">
       <div class="flex">
-        <div class="flex-1">
-          <nuxt-content :document="shipStatus" />
+        <div class="flex-1 text-4xl">
+          <div class="grid grid-cols-2 gap-5">
+            <h2>Location:</h2>
+            <h2>{{ shipStatus.currentLocation }}</h2>
+
+            <h2>Funds:</h2>
+            <h2>HD{{ shipStatus.funds }}</h2>
+
+            <h2>Cups of TEA:</h2>
+            <h2>{{ shipStatus.tea }}</h2>
+
+            <h2>Ship Stress:</h2>
+            <div class="grid grid-cols-3 gap-2">
+              <StressBox
+                v-for="(stress, idx) in shipStatus.shipStress"
+                :key="idx"
+                :checked="stress"
+              />
+            </div>
+          </div>
         </div>
         <div class="flex-1">
           <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
