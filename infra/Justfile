@@ -6,7 +6,10 @@ default:
   @just --list
 
 configure-base:
-    {{pyinfra_invocation}} infra/configure_base.py --ssh-user root 
+  {{pyinfra_invocation}} infra/configure_base.py --ssh-user root 
 
 configure-user:
-    {{pyinfra_invocation}} infra/configure_user.py
+  {{pyinfra_invocation}} infra/configure_user.py
+
+deploy-db:
+    scp ../content/db.json aith.yonkeltron.com:/opt/aith/db.json

@@ -1,0 +1,9 @@
+{
+  "communications": "communications/opening-scene",
+  "ship": {
+    "currentLocation": "Uhura",
+    "funds": 256,
+    "tea": 6,
+    "shipStress": [false, false, false]
+  }
+}

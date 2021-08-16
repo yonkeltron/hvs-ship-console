@@ -32,5 +32,5 @@ files.directory(
 files.put(
     name='Upload Caddyfile',
     src='Caddyfile',
-    dest='Caddyfile'
+    dest='/opt/aith/Caddyfile'
 )
