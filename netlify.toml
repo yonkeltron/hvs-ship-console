@@ -3,3 +3,7 @@ publish = "dist/"
 
 # Default build command.
 command = "yarn install && yarn generate --fail-on-error"
+
+[build.environment]
+NODE_VERSION = "14.17.4"
+YARN_VERSION = "1.22.11"
