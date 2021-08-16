@@ -23,13 +23,6 @@ git.config(
     value='yonkeltron@gmail.com'
 )
 
-git.repo(
-    name='Clone hvs-ship-console',
-    src='https://github.com/yonkeltron/hvs-ship-console.git',
-    dest='/opt/aith/hvs-ship-console',
-    branch='main'
-)
-
 files.put(
     name='Upload Caddyfile',
     src='Caddyfile',
