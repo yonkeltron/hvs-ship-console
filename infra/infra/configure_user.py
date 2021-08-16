@@ -23,6 +23,12 @@ git.config(
     value='yonkeltron@gmail.com'
 )
 
+files.directory(
+    name='Create AITH data dir',
+    path='/opt/aith/hvs-ship-console',
+    present=False,
+)
+
 files.put(
     name='Upload Caddyfile',
     src='Caddyfile',

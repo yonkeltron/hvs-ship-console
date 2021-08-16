@@ -1,22 +1,14 @@
-
-aith.yonkeltron.com {
-    reverse_proxy 100.110.170.106:3000
-    log {
-        output file /var/log/caddy/aith.yonkeltron.com.caddy_access.log
-    }
-}
-
 (cors) {
 	@origin header Origin {args.0}
 	header @origin Access-Control-Allow-Origin "{args.0}"
 	header @origin Access-Control-Request-Method GET
 }
 
-aith.yonkeltron.com:8080 {
+aith.yonkeltron.com {
     root * /opt/aith
     file_server
-    import cors aith.yonkeltron.com:8080
+    import cors aith.yonkeltron.com
     log {
-        output file /var/log/caddy/aith.yonkeltron.com.8080.caddy_access.log
+        output file /var/log/caddy/aith.yonkeltron.com.caddy_access.log
     }
 }
