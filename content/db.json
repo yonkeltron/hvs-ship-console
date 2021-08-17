@@ -1,9 +1,25 @@
 {
-  "communications": "communications/opening-scene",
+  "communications": { "current": "communications/opening-scene" },
   "ship": {
-    "currentLocation": "Uhura",
-    "funds": 256,
-    "tea": 6,
-    "shipStress": [false, false, false]
+    "currentLocation": "Ripley",
+    "funds": 384,
+    "tea": 9,
+    "shipStress": [false, false, false],
+    "aspects": [
+      "Has shuttle in cargo bay",
+      "Tons of empty batteries",
+      "+3 Astrogation Bioprocessor"
+    ]
+  },
+  "bank": {
+    "account": {
+      "savings": 0,
+      "debt": 0
+    },
+    "rates": {
+      "deposit": -1,
+      "interest": 3,
+      "loan": 4
+    }
   }
 }

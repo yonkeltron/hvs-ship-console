@@ -19,7 +19,7 @@ export const mutations: MutationTree<RootState> = {
 };
 
 export const actions: ActionTree<RootState, RootState> = {
-  async fetchThings({ commit }) {
+  async fetchGameState({ commit }) {
     const newGameState = await this.$axios.$get(
       'https://aith.yonkeltron.com/db.json'
     );

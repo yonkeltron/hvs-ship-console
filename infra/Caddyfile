@@ -1,13 +1,5 @@
-(cors) {
-	@origin header Origin {args.0}
-	header @origin Access-Control-Allow-Origin "{args.0}"
-	header @origin Access-Control-Request-Method GET
-}
-
 aith.yonkeltron.com {
-    root * /opt/aith
-    file_server
-    import cors aith.yonkeltron.com
+    reverse_proxy 100.110.170.106:54321
     log {
         output file /var/log/caddy/aith.yonkeltron.com.caddy_access.log
     }

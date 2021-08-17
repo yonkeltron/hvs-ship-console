@@ -35,20 +35,26 @@
 
 <script lang="ts">
 import {
+  computed,
   defineComponent,
   onMounted,
-  ref,
   useContext,
 } from '@nuxtjs/composition-api';
+import { GameState } from '~/store/game';
 
 export default defineComponent({
   setup() {
-    const { $content } = useContext();
+    const { $content, store } = useContext();
 
-    const message = ref({});
+    const message = computed(async () => {
+      const gameState = store.getters['game/gameState'] as GameState;
+      return await $content(gameState.communications).fetch();
+    });
 
-    onMounted(async () => {
-      message.value = await $content('communications/opening-scene').fetch();
+    onMounted(() => {
+      setInterval(() => {
+        store.dispatch('game/fetchGameState');
+      }, 5000);
     });
 
     return { message };
