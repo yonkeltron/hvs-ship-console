@@ -35,10 +35,11 @@
 
 <script lang="ts">
 import {
-  computed,
+  ref,
   defineComponent,
   onMounted,
   useContext,
+  onUnmounted,
 } from '@nuxtjs/composition-api';
 import { GameState } from '~/store/game';
 
@@ -46,15 +47,24 @@ export default defineComponent({
   setup() {
     const { $content, store } = useContext();
 
-    const message = computed(async () => {
-      const gameState = store.getters['game/gameState'] as GameState;
-      return await $content(gameState.communications.current).fetch();
-    });
+    const message = ref({});
 
-    onMounted(() => {
-      setInterval(() => {
-        store.dispatch('game/fetchGameState');
-      }, 5000);
+    const refresh = async () => {
+      store.dispatch('game/fetchGameState');
+      const gameState = store.getters['game/gameState'] as GameState;
+      if (gameState.communications) {
+        message.value = await $content(
+          gameState.communications.current
+        ).fetch();
+      }
+    };
+
+    const refreshInterval = setInterval(refresh, 3000);
+
+    refresh();
+
+    onUnmounted(() => {
+      clearInterval(refreshInterval);
     });
 
     return { message };

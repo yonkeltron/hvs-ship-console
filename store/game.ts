@@ -21,9 +21,9 @@ export const mutations: MutationTree<RootState> = {
 export const actions: ActionTree<RootState, RootState> = {
   async fetchGameState({ commit }) {
     const newGameState = await this.$axios.$get(
-      'https://aith.yonkeltron.com/db.json'
+      'https://aith.yonkeltron.com/db'
     );
-
+    console.log('Fetched new game state:', newGameState, new Date());
     commit('UPDATE_GAME_STATE', newGameState);
   },
 };

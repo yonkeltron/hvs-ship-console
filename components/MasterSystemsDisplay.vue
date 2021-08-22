@@ -3,24 +3,37 @@
     <section class="mt-5">
       <div class="flex">
         <div class="flex-1 text-4xl">
-          <div class="grid grid-cols-2 gap-5">
+          <div v-if="shipStatus.ship" class="grid grid-cols-2 gap-5">
             <h2>Location:</h2>
-            <h2>{{ shipStatus.currentLocation }}</h2>
+            <h2>{{ shipStatus.ship.currentLocation }}</h2>
 
             <h2>Funds:</h2>
-            <h2>HD{{ shipStatus.funds }}</h2>
+            <h2>HD{{ shipStatus.ship.funds }}</h2>
 
             <h2>Cups of TEA:</h2>
-            <h2>{{ shipStatus.tea }}</h2>
+            <h2>{{ shipStatus.ship.tea }}</h2>
 
             <h2>Ship Stress:</h2>
             <div class="grid grid-cols-3 gap-2">
               <StressBox
-                v-for="(stress, idx) in shipStatus.shipStress"
+                v-for="(stress, idx) in shipStatus.ship.shipStress"
                 :key="idx"
                 :checked="stress"
               />
             </div>
+          </div>
+
+          <div v-if="shipStatus.ship" class="mt-5">
+            <h2 class="my-5">Aspects:</h2>
+            <ul class="text-2xl">
+              <li
+                v-for="(aspect, idx) in shipStatus.ship.aspects"
+                :key="idx"
+                class="ml-5"
+              >
+                &check; {{ aspect }}
+              </li>
+            </ul>
           </div>
         </div>
         <div class="flex-1">
@@ -41,20 +54,32 @@
 
 <script lang="ts">
 import {
+  computed,
   defineComponent,
-  onMounted,
-  ref,
   useContext,
+  onUnmounted,
 } from '@nuxtjs/composition-api';
+
+import { GameState } from '~/store/game';
 
 export default defineComponent({
   setup() {
-    const { $content } = useContext();
+    const { store } = useContext();
 
-    const shipStatus = ref({});
+    const shipStatus = computed(
+      () => store.getters['game/gameState'] as GameState
+    );
 
-    onMounted(async () => {
-      shipStatus.value = await $content('msd').fetch();
+    const refresh = () => {
+      store.dispatch('game/fetchGameState');
+    };
+
+    const refreshInterval = setInterval(refresh, 3000);
+
+    refresh();
+
+    onUnmounted(() => {
+      clearInterval(refreshInterval);
     });
 
     return { shipStatus };
