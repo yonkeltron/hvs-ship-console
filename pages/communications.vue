@@ -48,7 +48,7 @@ export default defineComponent({
 
     const message = computed(async () => {
       const gameState = store.getters['game/gameState'] as GameState;
-      return await $content(gameState.communications).fetch();
+      return await $content(gameState.communications.current).fetch();
     });
 
     onMounted(() => {

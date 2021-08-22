@@ -6,7 +6,7 @@
     "tea": 9,
     "shipStress": [false, false, false],
     "aspects": [
-      "Has shuttle in cargo bay",
+      "Shuttle in cargo bay",
       "Tons of empty batteries",
       "+3 Astrogation Bioprocessor"
     ]
