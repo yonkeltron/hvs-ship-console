@@ -4,7 +4,7 @@ from: Ripley Skydock Reticule
 source: Ripley Skydock
 ---
 
-# Skydock
+# Ripley Skydock
 
 ## Offers ship repair and components:
 

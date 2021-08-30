@@ -75,4 +75,20 @@ export default defineComponent({
 .nuxt-content p {
   @apply my-2;
 }
+
+.nuxt-content h1 {
+  @apply my-4 text-3xl;
+}
+
+.nuxt-content h2 {
+  @apply my-4 text-2xl;
+}
+
+.nuxt-content h3 {
+  @apply my-4 text-xl;
+}
+
+.nuxt-content ul {
+  @apply ml-4 mb-4 list-disc;
+}
 </style>

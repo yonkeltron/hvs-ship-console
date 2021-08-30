@@ -10,7 +10,7 @@
       v-else
       class="w-12 h-12 rounded border-4 border-green-600 text-green-600"
     >
-      !
+      &check;
     </div>
   </div>
 </template>

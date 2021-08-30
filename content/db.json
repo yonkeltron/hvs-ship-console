@@ -1,13 +1,13 @@
 {
-  "communications": { "current": "communications/opening-scene" },
+  "communications": { "current": "communications/ripley-skydock" },
   "ship": {
     "currentLocation": "Ripley",
     "funds": 384,
     "tea": 9,
     "shipStress": [false, false, false],
     "aspects": [
-      "Shuttle in cargo bay",
-      "Tons of empty batteries",
+      "Scavenged shuttle aboard",
+      "Many empty batteries in cargo hold",
       "+3 Astrogation Bioprocessor"
     ]
   },
