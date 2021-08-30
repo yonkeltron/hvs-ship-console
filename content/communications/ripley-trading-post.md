@@ -12,6 +12,7 @@ source: Ripley Trading Post
 - Spices for HD35 a unit
 - Medicine for HD25 a unit
 - Deuterium for HD20 a unit
+- Batteries for HD 15 a unit
 
 ## Pssst. Black market:
 
